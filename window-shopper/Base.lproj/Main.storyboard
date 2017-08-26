@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,28 +32,50 @@
                                     <constraint firstAttribute="width" constant="60" id="Etc-3m-a54"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-T1-Kda" customClass="textFieldStyle" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="51" y="175" width="255" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ1-T1-Kda" customClass="textFieldStyle" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="150" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Qi-0D-ieo"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item price" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-ri-jj5" customClass="textFieldStyle" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="215" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h5X-2x-WE7"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="geJ-ri-jj5" firstAttribute="leading" secondItem="xZ1-T1-Kda" secondAttribute="leading" id="63a-Do-wSA"/>
                             <constraint firstAttribute="trailing" secondItem="NVi-iU-WHo" secondAttribute="trailing" id="8wC-i2-5HO"/>
+                            <constraint firstItem="geJ-ri-jj5" firstAttribute="height" secondItem="xZ1-T1-Kda" secondAttribute="height" id="A9W-bY-pX6"/>
                             <constraint firstItem="oLm-04-ze3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="FoS-7l-zbr"/>
                             <constraint firstItem="oLm-04-ze3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OK3-ve-yB6"/>
+                            <constraint firstItem="xZ1-T1-Kda" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Rlu-Gh-gwT"/>
                             <constraint firstItem="NVi-iU-WHo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3r-ZX-wDe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xZ1-T1-Kda" secondAttribute="trailing" constant="20" id="dYu-SL-ahL"/>
+                            <constraint firstItem="geJ-ri-jj5" firstAttribute="trailing" secondItem="xZ1-T1-Kda" secondAttribute="trailing" id="gli-dQ-MwY"/>
+                            <constraint firstItem="geJ-ri-jj5" firstAttribute="top" secondItem="xZ1-T1-Kda" secondAttribute="bottom" constant="25" id="jcf-Mm-tvu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NVi-iU-WHo" secondAttribute="bottom" id="plk-zf-VfJ"/>
+                            <constraint firstItem="xZ1-T1-Kda" firstAttribute="top" secondItem="oLm-04-ze3" secondAttribute="bottom" constant="35" id="v1U-rq-nCt"/>
                             <constraint firstItem="NVi-iU-WHo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="w8j-5y-UuK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtPrice" destination="geJ-ri-jj5" id="Jpa-fO-1z5"/>
+                        <outlet property="txtWage" destination="xZ1-T1-Kda" id="0cC-hF-dvt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="322" y="36"/>
         </scene>
     </scenes>
     <resources>

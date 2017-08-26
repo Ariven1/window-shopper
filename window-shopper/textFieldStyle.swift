@@ -29,11 +29,6 @@ class textFieldStyle: UITextField {
         layer.cornerRadius = 5.0
         textAlignment = .center
         
-        if placeholder == nil{
-            
-            placeholder = " "
-        }
-        
         if let p = placeholder{
             
             let place = NSAttributedString(string: p, attributes: [NSForegroundColorAttributeName: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])

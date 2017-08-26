@@ -10,9 +10,10 @@ import UIKit
 
 class MainVC: UIViewController {
 
-    
     @IBOutlet weak var txtWage: textFieldStyle!
     @IBOutlet weak var txtPrice: textFieldStyle!
+    @IBOutlet weak var lblResult: UILabel!
+    @IBOutlet weak var lblHours: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +26,32 @@ class MainVC: UIViewController {
         
         txtWage.inputAccessoryView = calcBtn
         txtPrice.inputAccessoryView = calcBtn
+        
+        lblResult.isHidden = true
+        lblHours.isHidden = true
     }
 
     @objc func calculate(){
     
-        print("We got here")
+        if let txtWage = txtWage.text, let txtPrice = txtPrice.text{
+        
+            if let wage = Double(txtWage), let price = Double(txtPrice){
+            
+                view.endEditing(true)
+                lblResult.isHidden = false
+                lblHours.isHidden = false
+                lblResult.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+            }
+        }
     }
     
+    @IBAction func btnClearCalculator(_ sender: Any) {
+        
+        lblResult.isHidden = true
+        lblHours.isHidden = true
+        txtWage.text = ""
+        txtPrice.text = ""
+    }
   
 
 }
